@@ -1,0 +1,300 @@
+<!--
+    This is me using the Giphy api
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>gif</title>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css" />
+        <style>
+            .slideshow {
+                max-width: 500px;
+                position: relative;
+                margin: auto;
+                margin-bottom: 50px;
+            }
+            .mySlides {
+                display: none;
+            }
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: blue;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+            }
+            .next {
+                border-radius: 3px 0 0 3px;
+                right: 0;
+            }
+            .prev:hover, .next:hover {
+                background-color: rgba(0, 0, 0, .8);
+            }
+            .text {
+                color: black;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: -30px;
+                width: 100%;
+                text-align: center;
+            }
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+            @-webkit-keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+            img {
+                margin-left: 50px;
+                margin-bottom: 30x;
+                width: 400px;
+            }
+            h1 {
+                text-align: center;
+            }
+            #button {
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body class="container red darken-2">
+        <div class="red">
+            <header class="container">
+                <h1>Working with the Giphy API</h1>
+            </header>
+            <main class="container">
+                <div class="container">
+                    <label for="searchBar" class="white-text">Enter your search here:</label>
+                    <input id="search" type="text" name="searchBar" class="red lighten-3">
+                    <button id="button" class="waves-effect waves-light btn" onclick="search()">Search!!!!</button>
+                    <img src="" id="gifResult">
+                </div>
+                <p class="flow-text">
+                    This is a slideshow of the top ten trending Gifs. These were hand selected by the team at Giphy.
+                </p>
+                <div class="slideshow">
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif1" src="">
+                        <div class="text" id="text1">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif2" src="">
+                        <div class="text" id="text2">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif3" src="">
+                        <div class="text" id="text3">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif4" src="">
+                        <div class="text" id="text4">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif5" src="">
+                        <div class="text" id="text5">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif6" src="">
+                        <div class="text" id="text6">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif7" src="">
+                        <div class="text" id="text7">Created by </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif8" src="">
+                        <div class="text" id="text8">Created by </div>    
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif9" src="">
+                        <div class="text" id="text9">Created by </div>    
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                    <div class="mySlides fade">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                        <img id="gif10" src="">
+                        <div class="text" id="text10">Created by </div>  
+                        <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    </div>
+                </div>
+            </main>
+            <footer class="container center-align">
+                <p>
+                    copyright information
+                </p>
+            </footer>
+        </div>
+        <script>
+            function search() {
+                var searchTerm = document.querySelector('#search').value
+                $.get("https://api.giphy.com/v1/gifs/search?api_key=hE71b6EaOjI7dfQDzU6idUzu050WBL7l&q=" + searchTerm + "&limit=25&offset=0&rating=G&lang=en", function(data){
+                var searchLink = data.data[0].images.fixed_width.url;
+                document.querySelector('#gifResult').setAttribute('src', searchLink);
+            });
+        };
+        </script>
+        <script>
+            /*
+                This is where I actually call for the usernames of the 
+                people who actually made the gifs. This portion does need an
+                if statement to ensure the the gifs that are coming in without
+                an actual owner get the anonymous credit, if this is not in place
+                you will recieve an error message.
+            */
+            $.get("https://api.giphy.com/v1/gifs/trending?api_key=hE71b6EaOjI7dfQDzU6idUzu050WBL7l&limit=25&rating=G", function(data) {
+                if (data.data[0].username == "") {
+                    $('#text1').append("anonymous");
+                } else {
+                    var text1 = data.data[0].user.display_name;
+                    $('#text1').append(text1);
+                }
+                if (data.data[1].username == "") {
+                    $('#text2').append("anonymous");
+                } else {
+                    var text2 = data.data[1].user.display_name;
+                    $('#text2').append(text2);   
+                }
+                if (data.data[2].username == "") {
+                    $('#text3').append("anonymous");
+                } else {
+                    var text3 = data.data[2].user.display_name;
+                    $('#text3').append(text3);    
+                }
+                if (data.data[3].username == "") {
+                    $('#text4').append("anonymous");
+                } else {
+                    var text4 = data.data[3].user.display_name;
+                    $('#text4').append(text4);
+                }
+                if (data.data[4].username == "") {
+                    $('#text5').append("anonymous");
+                } else {
+                    var text5 = data.data[4].user.display_name;
+                    $('#text5').append(text5);
+                }
+                if (data.data[5].username == "") {
+                    $('#text6').append("anonymous");
+                } else {
+                    var text6 = data.data[5].user.display_name;
+                    $('#text6').append(text6);
+                }
+                if (data.data[6].username == "") {
+                    $('#text7').append("anonymous");
+                } else {
+                    var text7 = data.data[6].user.display_name;
+                    $('#text7').append(text7);
+                }
+                if (data.data[7].username == "") {
+                    $('#text8').append("anonymous");
+                } else {
+                    var text8 = data.data[7].user.display_name;
+                    $('#text8').append(text8);
+                }
+                if (data.data[8].username == "") {
+                    $('#text9').append("anonymous");
+                } else {
+                    var text9 = data.data[8].user.display_name;
+                    $('#text9').append(text9);
+                }
+                if (data.data[9].username == "") {
+                    $('#text10').append("anonymous");
+                } else {
+                    var text10 = data.data[9].user.display_name;
+                    $('#text10').append(text10);
+                }
+            });
+        </script>
+        <script>
+            /*
+                This call is to actually get the image urls
+                then I asign them the the img tags that I already 
+                have made.
+            */
+            $.get("https://api.giphy.com/v1/gifs/trending?api_key=hE71b6EaOjI7dfQDzU6idUzu050WBL7l&limit=25&rating=G", function(data) {
+                console.log(data);
+                var link = data.data[0].images.fixed_width.url;
+                document.querySelector('#gif1').setAttribute('src', link);
+                var link = data.data[1].images.fixed_width.url;
+                document.querySelector('#gif2').setAttribute('src', link);
+                var link = data.data[2].images.fixed_width.url;
+                document.querySelector('#gif3').setAttribute('src', link);
+                var link = data.data[3].images.fixed_width.url;
+                document.querySelector('#gif4').setAttribute('src', link);
+                var link = data.data[4].images.fixed_width.url;
+                document.querySelector('#gif5').setAttribute('src', link);
+                var link = data.data[5].images.fixed_width.url;
+                document.querySelector('#gif6').setAttribute('src', link);
+                var link = data.data[6].images.fixed_width.url;
+                document.querySelector('#gif7').setAttribute('src', link);
+                var link = data.data[7].images.fixed_width.url;
+                document.querySelector('#gif8').setAttribute('src', link);
+                var link = data.data[8].images.fixed_width.url;
+                document.querySelector('#gif9').setAttribute('src', link);
+                var link = data.data[9].images.fixed_width.url;
+                document.querySelector('#gif10').setAttribute('src', link);
+            });
+        </script>
+        <script>
+            /*
+                This is the code I needed to make the slideshow work for the 
+                trending gifs.
+            */
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+            function showSlides(n) {
+            var i;
+            var slides = $(".mySlides");
+            if (n > slides.length) {slideIndex = 1} 
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex-1].style.display = "block"; 
+            }
+        </script>
+    </body>
+</html>
